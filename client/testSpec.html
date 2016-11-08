@@ -1,0 +1,69 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mocha Tests</title>
+  <!-- Bootstrap Core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom Fonts -->
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+  <!-- Plugin CSS -->
+  <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+  <!-- Theme CSS -->
+  <link href="css/creative.min.css" rel="stylesheet">
+  <link href="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.css" rel="stylesheet" />
+</head>
+<body style="padding-top:4em;">
+  <nav id="mainNav" class="navbar navbar-default navbar-fixed-top" style="background-color: #a9a9a9">
+      <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+              <a class="navbar-brand page-scroll" href="/">Home</a>
+          </div>
+      </div>
+      <!-- /.container-fluid -->
+  </nav>
+  <div>
+    <div id='waiting' style="padding-top: 2em;">Please wait as it loads largest amounts of test data.</div>
+    <div id="mocha"></div>
+
+    <!-- function -->
+    <script src="js/email_duplicates.js"></script>
+
+    <!-- load lists -->
+    <script src="lists/list0.js"></script>
+    <script src="lists/list1.js"></script>
+    <script src="lists/list2.js"></script>
+    <script src="lists/list3.js"></script>
+    <script src="lists/list4.js"></script>
+    <script src="lists/list5.js"></script>
+    <script src="lists/list6.js"></script>
+    <script src="lists/list7.js"></script>
+    <script src="lists/list8.js"></script>
+    <script src="lists/list9.js"></script>
+
+    <!-- mocha.js dependencies -->
+    <script src="https://cdn.rawgit.com/jquery/jquery/2.1.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/Automattic/expect.js/0.3.1/index.js"></script>
+    <script src="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+
+    <script>mocha.setup('bdd')</script>
+    <script src="js/testSpec.js"></script>
+    <script>
+      mocha.checkLeaks();
+      mocha.globals(['jQuery']);
+      mocha.run();
+    </script>
+
+    <!-- hide waiting bar after load -->
+    <script>
+      $(document).ready(function(){
+        $("#waiting").hide(); 
+      });
+    </script>
+  </div>
+</body>
+</html>
